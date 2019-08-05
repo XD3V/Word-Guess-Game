@@ -1,0 +1,65 @@
+html { 
+    background: url(space.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+
+  .box1{
+      
+      margin-left: 40%;
+      margin-right: 40%;
+      margin-bottom: 1%;
+      margin-top: 5%;
+
+  }
+
+  .title{
+      font-size: 450%;
+     font-family: 'Space Mono', monospace;
+     text-align: center;
+     color: #00fffd;
+
+/* Slide for HANGMAN*/
+
+     position: absolute;
+     top: -1500px;
+     -webkit-animation: drop 0.5s forwards;
+     -webkit-animation-delay: 2s;
+     animation: drop 1.0s forwards;
+     animation-delay: 2s;
+    
+  }
+
+  .box2{
+      float: left;
+      margin-left: 20%;
+    font-size: 100%;
+    -ms-transform: rotate(-20deg); 
+    -webkit-transform: rotate(-20deg); 
+    transform: rotate(-20deg);
+
+    /* Slide for Space-ED*/
+
+    position: absolute;
+    left: -1000px;
+    -webkit-animation: slide 0.5s forwards;
+    -webkit-animation-delay: 2s;
+    animation: slide 1.0s forwards;
+    animation-delay: 2s;
+  }
+  @-webkit-keyframes slide {
+    100% { left: 0; }
+}
+
+@keyframes slide {
+    100% { left: 0; }
+}
+@-webkit-keyframes drop {
+    100% { top: -0; }
+}
+
+@keyframes drop {
+    100% { top: -0; }
+}
