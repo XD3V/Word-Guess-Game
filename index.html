@@ -19,18 +19,19 @@
         </div>
 
         <div class="box1"> </div>
-        <div>
+       
 
-            
-        <div>
-            Your Choice: <span id="yourchoice"> </span>
-        </div>
-                Wins: <span id="wins"></span>
-        </div>
+    <div class="border1"> 
+            <p id="tires-text"></p>
+            <p id="userchoice-text"></p>
+            <p id="wins-text"></p>
+            <p id="losses-text"></p>
+            <p id="word-text"></p>
+          
+    </div>
         
-        <div>
-                Losses <span id="losses"></span>
-        </div>
+        
+       
 
     <script>
     // array of words
@@ -48,9 +49,14 @@ var wins = 0;
 var losses = 0;
 
 // Create variables that hold references to the places in the HTML where we want to display things.
-var guess= document.getElementById("yourchoice");
-var winsText = document.getElementById("wins");
-var lossesText = document.getElementById("losses");
+var userChoiceText = document.getElementById("userchoice-text");
+var winsText = document.getElementById("wins-text");
+var lossesText = document.getElementById("losses-text");
+var wordText = document.getElementById("word-text");
+var maxTries = document.getElementById("tires-text");
+document.onkeyup = function(event) {
+
+    var userGuess = event.key;
 
  // Pick a random word
  var word = words[Math.floor(Math.random() * words.length)];
@@ -59,34 +65,50 @@ var lossesText = document.getElementById("losses");
  for (var i = 0; i < word.length; i++) {
  answerArray[i] = "_";
  }
- var remainingLetters = word.length;
- // The game loop
- while (remainingLetters > 0) {
- // Show the player their progress
- alert(answerArray.join(" "));
- // Get a guess from the player
- var guess = prompt("Guess a letter.");
 
- if (guess === null) {
- // Exit the game loop
- break;
- } else if (guess.length !== 1) {
- ("Please enter a single letter.");
- } else {
- // Update the game state with the guess
- for (var j = 0; j < word.length; j++) {
- if (word[j] === guess) {
- answerArray[j] = guess;
- remainingLetters--;
- }
- }
- }
-}
- // Show the answer and congratulate the player
- document.getElementById("demo").innerHTML = (answerArray.join(" "));
+  var remainingLetters = word.length;
 
- alert("Good job! The answer was " + word);
+//Only allwo these letter keys
+ if ((userGuess === "a") || (userGuess === "b") || (userGuess === "c") || (userGuess === "d") || (userGuess === "e") || (userGuess === "f") ||
+     (userGuess === "g") || (userGuess === "h") || (userGuess === "i") || (userGuess === "j") || (userGuess === "k") || (userGuess === "l") ||
+     (userGuess === "m") || (userGuess === "n") || (userGuess === "o") || (userGuess === "p") || (userGuess === "q") || (userGuess === "r") ||
+     (userGuess === "s") || (userGuess === "t") || (userGuess === "u") || (userGuess === "v") || (userGuess === "w") || (userGuess === "x") ||
+     (userGuess === "y") || (userGuess === "z")){
+ 
+ // it tells the user theu only have 15 tries and it counds down eachtime they get it wrong
+       if (remainingLetters > 0 && word.length > 15);{
+      answerArray[j] = userGuess;
+       }
+       //each time the userGuess is right a letter pops  on the empty line
+    for (var j = 0; j < word.length; j++) {
+    if (word[j] === userGuess) {
+    wins++;
     
+ }
+ else {losses++;
+       }
+ // Update the game 
+ for (var j = 0; j < word.length; j++) { 
+ if (word[j] === userGuess){
+ answerArray[j] = userGuess;
+ remainingLetters--;
+   answerArray.join("");
+                    }
+                   
+                }
+       }
+      
+     
+    }
+    // updates the game when changes are made
+    userChoiceText.textContent = "You chose: " + userGuess;
+    
+    wordText.textContent ++; 
+    wordText.textContent = answerArray;
+    winsText.textContent = "wins: " + wins++;
+    lossesText.textContent = "losses: " + losses++;
+}
+ 
     </script>
 </body>
 </html>

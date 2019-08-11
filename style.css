@@ -33,12 +33,7 @@ html {
     
   }
 
-  p {
-    color:white;
-    font-size:250%;
-
-   }
-
+  
 
   .box2{
       float: left;
@@ -59,12 +54,16 @@ html {
   }
 
   .border1{
-
-    background: white;
+float: right;
+    background: lightgrey;
+    height: 500px;
+    width: 600px;
     margin-bottom: 10%;
     margin-top: 10%;
-    margin-left: 25%;
-    margin-right: 25%;
+    margin-left: 15%;
+    margin-right: 15%;
+    color:black;
+    font-size:250%;
   }
 
   @-webkit-keyframes slide {
