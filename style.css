@@ -12,7 +12,7 @@ html {
       margin-right: 40%;
       margin-bottom: 1%;
       margin-top: 5%;
-
+        
   }
 
   .title{
@@ -21,6 +21,7 @@ html {
      text-align: center;
      color: #00fffd;
 
+   
 /* Slide for HANGMAN*/
 
      position: absolute;
@@ -31,6 +32,13 @@ html {
      animation-delay: 2s;
     
   }
+
+  p {
+    color:white;
+    font-size:250%;
+
+   }
+
 
   .box2{
       float: left;
@@ -49,6 +57,16 @@ html {
     animation: slide 1.0s forwards;
     animation-delay: 2s;
   }
+
+  .border1{
+
+    background: white;
+    margin-bottom: 10%;
+    margin-top: 10%;
+    margin-left: 25%;
+    margin-right: 25%;
+  }
+
   @-webkit-keyframes slide {
     100% { left: 0; }
 }
@@ -63,3 +81,4 @@ html {
 @keyframes drop {
     100% { top: -0; }
 }
+

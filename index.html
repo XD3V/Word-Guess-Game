@@ -18,8 +18,74 @@
             <h1 class="title">SPACE EDITION</h1>
         </div>
 
+        <div class="box1"> </div>
+        <div>
+
+            
+        <div>
+            Your Choice: <span id="yourchoice"> </span>
+        </div>
+                Wins: <span id="wins"></span>
+        </div>
+        
+        <div>
+                Losses <span id="losses"></span>
+        </div>
+
     <script>
-    
+    // array of words
+    var words = [
+        "cosmos",
+        "astroid",
+        "black hole",
+        "stars",
+        "planets", 
+        "astronaut"
+]
+//variables for wins and losses
+
+var wins = 0;
+var losses = 0;
+
+// Create variables that hold references to the places in the HTML where we want to display things.
+var guess= document.getElementById("yourchoice");
+var winsText = document.getElementById("wins");
+var lossesText = document.getElementById("losses");
+
+ // Pick a random word
+ var word = words[Math.floor(Math.random() * words.length)];
+ // Set up the answer array
+ var answerArray = [];
+ for (var i = 0; i < word.length; i++) {
+ answerArray[i] = "_";
+ }
+ var remainingLetters = word.length;
+ // The game loop
+ while (remainingLetters > 0) {
+ // Show the player their progress
+ alert(answerArray.join(" "));
+ // Get a guess from the player
+ var guess = prompt("Guess a letter.");
+
+ if (guess === null) {
+ // Exit the game loop
+ break;
+ } else if (guess.length !== 1) {
+ ("Please enter a single letter.");
+ } else {
+ // Update the game state with the guess
+ for (var j = 0; j < word.length; j++) {
+ if (word[j] === guess) {
+ answerArray[j] = guess;
+ remainingLetters--;
+ }
+ }
+ }
+}
+ // Show the answer and congratulate the player
+ document.getElementById("demo").innerHTML = (answerArray.join(" "));
+
+ alert("Good job! The answer was " + word);
     
     </script>
 </body>
