@@ -5,15 +5,15 @@ html {
     -o-background-size: cover;
     background-size: cover;
   }
-
+/* 
   .box1{
       
-      margin-left: 40%;
+      /* margin-left: 40%;
       margin-right: 40%;
       margin-bottom: 1%;
-      margin-top: 5%;
+      margin-top: 5%; 
         
-  }
+  } */
 
   .title{
       font-size: 450%;
@@ -54,14 +54,11 @@ html {
   }
 
   .border1{
-float: right;
+/* float: right; */
+    margin-left: 20%;
     background: lightgrey;
-    height: 500px;
-    width: 600px;
-    margin-bottom: 10%;
-    margin-top: 10%;
-    margin-left: 15%;
-    margin-right: 15%;
+    height: 25%;
+    width: 25%;
     color:black;
     font-size:250%;
   }

@@ -1,115 +1,61 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-us">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://fonts.googleapis.com/css?family=Space+Mono&display">
+
+
     <link rel="stylesheet" href="style.css">
+
     <title>Word-Guess-Game</title>
 </head>
-<body>
 
-    <div class="box1">
-        <h1 class="title">HANGMAN</h1>
-    </div>
-    
-    <div class="box2">
+<body>
+    <div>
+        <div class="box1">
+            <h1 class="title">HANGMAN</h1>
+        </div>
+
+        <div class="box2">
             <h1 class="title">SPACE EDITION</h1>
         </div>
 
-        <div class="box1"> </div>
-       
+        <div class="box1">
 
-    <div class="border1"> 
-            <p id="tires-text"></p>
-            <p id="userchoice-text"></p>
-            <p id="wins-text"></p>
-            <p id="losses-text"></p>
-            <p id="word-text"></p>
-          
+
+            <div class="border1">
+                <p>Press any key to get started!</p>
+
+                <!-- When user presses any key, start game -->
+                <h4>Wins</h4>
+                <div id="totalWins"></div>
+                <h4>Current Word</h4>
+                <div id="currentWord"></div>
+                <h4>Guesses Remaining</h4>
+                <div id="remainingGuesses"></div>
+                <h4>Letters Guessed</h4>
+                <div id="guessedLetters"></div>
+
+            </div>
+        </div>
     </div>
-        
-        
-       
-
-    <script>
-    // array of words
-    var words = [
-        "cosmos",
-        "astroid",
-        "black hole",
-        "stars",
-        "planets", 
-        "astronaut"
-]
-//variables for wins and losses
-
-var wins = 0;
-var losses = 0;
-
-// Create variables that hold references to the places in the HTML where we want to display things.
-var userChoiceText = document.getElementById("userchoice-text");
-var winsText = document.getElementById("wins-text");
-var lossesText = document.getElementById("losses-text");
-var wordText = document.getElementById("word-text");
-var maxTries = document.getElementById("tires-text");
-document.onkeyup = function(event) {
-
-    var userGuess = event.key;
-
- // Pick a random word
- var word = words[Math.floor(Math.random() * words.length)];
- // Set up the answer array
- var answerArray = [];
- for (var i = 0; i < word.length; i++) {
- answerArray[i] = "_";
- }
-
-  var remainingLetters = word.length;
-
-//Only allwo these letter keys
- if ((userGuess === "a") || (userGuess === "b") || (userGuess === "c") || (userGuess === "d") || (userGuess === "e") || (userGuess === "f") ||
-     (userGuess === "g") || (userGuess === "h") || (userGuess === "i") || (userGuess === "j") || (userGuess === "k") || (userGuess === "l") ||
-     (userGuess === "m") || (userGuess === "n") || (userGuess === "o") || (userGuess === "p") || (userGuess === "q") || (userGuess === "r") ||
-     (userGuess === "s") || (userGuess === "t") || (userGuess === "u") || (userGuess === "v") || (userGuess === "w") || (userGuess === "x") ||
-     (userGuess === "y") || (userGuess === "z")){
- 
- // it tells the user theu only have 15 tries and it counds down eachtime they get it wrong
-       if (remainingLetters > 0 && word.length > 15);{
-      answerArray[j] = userGuess;
-       }
-       //each time the userGuess is right a letter pops  on the empty line
-    for (var j = 0; j < word.length; j++) {
-    if (word[j] === userGuess) {
-    wins++;
-    
- }
- else {losses++;
-       }
- // Update the game 
- for (var j = 0; j < word.length; j++) { 
- if (word[j] === userGuess){
- answerArray[j] = userGuess;
- remainingLetters--;
-   answerArray.join("");
-                    }
-                   
-                }
-       }
-      
-     
-    }
-    // updates the game when changes are made
-    userChoiceText.textContent = "You chose: " + userGuess;
-    
-    wordText.textContent ++; 
-    wordText.textContent = answerArray;
-    winsText.textContent = "wins: " + wins++;
-    lossesText.textContent = "losses: " + losses++;
-}
- 
-    </script>
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
+        integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+        crossorigin="anonymous"></script>
+    <script src="app.js"></script>
 </body>
-</html>
 
+
+</body>
+
+</html>
