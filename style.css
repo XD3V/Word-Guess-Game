@@ -37,7 +37,7 @@ html {
 
   .box2{
       float: left;
-      margin-left: 20%;
+      margin-left: 70%;
     font-size: 100%;
     -ms-transform: rotate(-20deg); 
     -webkit-transform: rotate(-20deg); 
@@ -58,9 +58,10 @@ html {
     margin-left: 20%;
     background: lightgrey;
     height: 25%;
-    width: 25%;
+    width: 50%;
     color:black;
     font-size:250%;
+    text-align: center;
   }
 
   @-webkit-keyframes slide {
